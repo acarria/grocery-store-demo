@@ -1,0 +1,67 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+.env
+.env.*
+.venv/
+venv/
+build/
+dist/
+*.egg-info/
+*.egg
+
+# Node.js
+node_modules/
+.npm/
+.next/
+.next/cache/
+*.log
+
+# Next.js
+out/
+
+# Docker
+*.pid
+docker-compose.override.yml
+
+# OS/Editor/IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+*.bak
+*.tmp
+
+# Test/coverage
+.coverage
+htmlcov/
+.tox/
+.pytest_cache/
+
+# Misc
+*.sqlite3
+*.db
+*.pkl
+*.mypy_cache/
+
+# Ignore frontend build output
+frontend/.next/
+frontend/node_modules/
+
+# Ignore backend venv
+backend/.venv/
+
+# Ignore environment and secret files
+*.env
+*.env.*
+.envrc
+.env.local
+
+# Ignore lock files (optional, if you want to keep them, remove these lines)
+# package-lock.json
+yarn.lock 
