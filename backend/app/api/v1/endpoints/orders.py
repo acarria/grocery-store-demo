@@ -37,7 +37,14 @@ def get_current_user(token: str = Depends(oauth2_scheme), db: Session = Depends(
 def get_orders(current_user: User = Depends(get_current_user), db: Session = Depends(get_db)):
     """Get user's order history"""
     orders = db.query(Order).filter(Order.user_id == current_user.id).order_by(Order.created_at.desc()).all()
-    return orders
+    # Ensure order_items is always present in the response
+    return [
+        {
+            **order.__dict__,
+            "order_items": [item for item in order.items]
+        }
+        for order in orders
+    ]
 
 @router.post("/", response_model=OrderResponse)
 def create_order(

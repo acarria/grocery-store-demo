@@ -30,7 +30,7 @@ class OrderResponse(OrderBase):
     order_number: str
     status: OrderStatus
     total_amount: float
-    items: List[OrderItemResponse]
+    order_items: List[OrderItemResponse]
     created_at: datetime
     updated_at: Optional[datetime] = None
     
